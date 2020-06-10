@@ -27,15 +27,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//app.use('/items', itemsRouter)
+app.use('/items', itemsRouter)
 
 
 
 
-/*db.query('select * from customers', (err, rows) => {
+db.query('select * from items', (err, rows) => {
   if(err) console.log(err)
   console.log(rows)
-})*/
+})
 
 app.use(cors())
 
