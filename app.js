@@ -7,10 +7,13 @@ const cors = require('cors')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const customerRouter = require('./routes/customers')
 const itemsRouter = require('./routes/items')
 
+require('dotenv').config()
 const app = express();
+
+// Data Base connection
+require('./db').connect()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,17 +27,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//app.use('/customers', customerRouter)
 //app.use('/items', itemsRouter)
 
 
-// Data Base connection
-require('./db').connect()
 
-db.query('select * from customers', (err, rows) => {
+
+/*db.query('select * from customers', (err, rows) => {
   if(err) console.log(err)
   console.log(rows)
-})
+})*/
 
 app.use(cors())
 
