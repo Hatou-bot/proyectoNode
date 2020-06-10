@@ -1,4 +1,4 @@
-const queries = require('../queries')
+/*const queries = require('../queries')
 
 const getAll = () => {
     return new promise((resolve, reject) => {
@@ -13,4 +13,4 @@ const getAll = () => {
 
 module.exports = {
     getAll
-}
+} */
